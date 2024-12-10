@@ -1,2 +1,3 @@
 notebooks/NYPD_Complaint_Data_Historic.csv
 notebooks/NYC_Cleaned_Optimized.csv
+app/__pycache__

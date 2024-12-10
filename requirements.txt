@@ -4,3 +4,9 @@ seaborn
 scikit-learn
 xgboost
 imbalanced-learn
+streamlit
+folium
+streamlit-folium
+optuna
+catboost
+lightgbm
