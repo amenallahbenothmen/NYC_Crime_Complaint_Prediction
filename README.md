@@ -55,8 +55,8 @@ To install requirements run:
 pip install -r requirements.txt
 ```
 ## Interface
-![Interface Example](images\stream2.png)
+![Interface Example](images/stream2.png)
 
 ## Technical Documentation
 
-To document our work, we wrote a research paper that is included in the [repo](https://github.com/amenallahbenothmen/NYC_Crime_Complaint_Prediction/docs/nyc_crimes_prediction_paper.pdf).
+To document our work, we wrote a research paper that is included in the [repo](https://github.com/amenallahbenothmen/NYC_Crime_Complaint_Prediction/docs/Technical_Document.pdf).
