@@ -1,29 +1,27 @@
+import geopandas as gpd
+from shapely.geometry import Point
+
 def determine_borough(lat, lon):
-    borough_boundaries = {
-        'BROOKLYN': {'lat_min': 40.5700, 'lat_max': 40.7400, 'lon_min': -74.0400, 'lon_max': -73.8500},
-        'MANHATTAN': {'lat_min': 40.7000, 'lat_max': 40.8800, 'lon_min': -74.0200, 'lon_max': -73.9100},
-        'BRONX': {'lat_min': 40.7900, 'lat_max': 40.9200, 'lon_min': -73.9300, 'lon_max': -73.7900},
-        'QUEENS': {'lat_min': 40.5500, 'lat_max': 40.8000, 'lon_min': -73.9600, 'lon_max': -73.7200},
-        'STATEN ISLAND': {'lat_min': 40.5000, 'lat_max': 40.6500, 'lon_min': -74.2500, 'lon_max': -74.0500}
-    }
-    
+    gdf = gpd.read_file("boundries.geojson")
+    point = Point(lon, lat)
+    selected = gdf[gdf.geometry.contains(point)]
+
     borough_mapping = {
-        'BRONX': 0,
-        'BROOKLYN': 1,
-        'MANHATTAN': 2,
-        'QUEENS': 3,
-        'STATEN ISLAND': 4,
+        'Bronx': 0,
+        'Brooklyn': 1,
+        'Manhattan': 2,
+        'Queens': 3,
+        'Staten Island': 4,
         'UNKNOWN': 5
     }
-    
-    for borough, bounds in borough_boundaries.items():
-        if (bounds['lat_min'] <= lat <= bounds['lat_max']) and (bounds['lon_min'] <= lon <= bounds['lon_max']):
-            return borough, borough_mapping[borough]
-    
-    # If no match, return UNKNOWN
-    return "UNKNOWN", borough_mapping['UNKNOWN']
 
-
+    if not selected.empty:
+        borough_name = selected.iloc[0]['boro_name']  
+        borough_code = borough_mapping.get(borough_name)
+        return borough_name, borough_code
+    else:
+        return "UNKNOWN", borough_mapping['UNKNOWN']
+    
 
 def determine_victim_age(age):
     if age is None:
@@ -52,7 +50,7 @@ def determine_victim_race(race):
         'WHITE HISPANIC': 6
     }
     mapping_code = race_mapping.get(race, race_mapping['UNKNOWN'])
-    return race, mapping_code  # Return both race and its code
+    return race, mapping_code  
 
 
 def determine_victim_gender(gender):
@@ -62,5 +60,16 @@ def determine_victim_gender(gender):
         'U': 2
     }
     mapping_code = gender_mapping.get(gender, gender_mapping['U'])
-    return gender, mapping_code  # Return both the gender and its code
+    return gender, mapping_code  
+
+def get_offense_description(code: int) -> str:
+    mapping = {
+        0: "ADMINISTRATIVE_RELATED",
+        1: "DRUGS/ALCOHOL_RELATED",
+        2: "PERSONAL_RELATED",
+        3: "PROPERTY_RELATED",
+        4: "SEXUAL_RELATED"
+    }
+    
+    return mapping.get(code, "UNKNOWN_OFFENSE")
 
