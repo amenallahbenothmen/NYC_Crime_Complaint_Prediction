@@ -59,4 +59,4 @@ pip install -r requirements.txt
 
 ## Technical Documentation
 
-To document our work, we wrote a research paper that is included in the [repo](https://github.com/amenallahbenothmen/NYC_Crime_Complaint_Prediction/blob/main/docs/Technical_Document.pdf).
+To document our work, we wrote a research paper that is included in the [Technical Repo](https://github.com/amenallahbenothmen/NYC_Crime_Complaint_Prediction/blob/main/docs/Technical_Document.pdf).
