@@ -10,6 +10,8 @@
     <a href="#dataset">Dataset</a> |
     <a href="#notebooks">Notebooks</a> |
     <a href="#technologies">Technologies</a> |
+    <a href="#Interface">Interface</a> |
+    <a href="#Technical Documentation">Technical Documentation</a> |
   </h4>
 </div>
 
@@ -34,6 +36,9 @@ Different notebooks are provided for :
 This web application is developd using:
 - Streamlit
 - Folium
+- geopy
+- geopandas
+- shapely
 
 For data cleaning, EDA and modeling:
 - Pandas
@@ -49,4 +54,9 @@ To install requirements run:
 ```sh
 pip install -r requirements.txt
 ```
+## Interface
+![Interface Example](images\stream2.png)
 
+## Technical Documentation
+
+To document our work, we wrote a research paper that is included in the [repo](https://github.com/amenallahbenothmen/NYC_Crime_Complaint_Prediction/docs/nyc_crimes_prediction_paper.pdf).
