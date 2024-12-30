@@ -11,7 +11,7 @@
     <a href="#notebooks">Notebooks</a> |
     <a href="#technologies">Technologies</a> |
     <a href="#Interface">Interface</a> |
-    <a href="#Technical Documentation">Technical Documentation</a> |
+    <a href="#Technical Documentation">Technical Documentation</a> 
   </h4>
 </div>
 
@@ -59,4 +59,4 @@ pip install -r requirements.txt
 
 ## Technical Documentation
 
-To document our work, we wrote a research paper that is included in the [repo](https://github.com/amenallahbenothmen/NYC_Crime_Complaint_Prediction/docs/Technical_Document.pdf).
+To document our work, we wrote a research paper that is included in the [repo](https://github.com/amenallahbenothmen/NYC_Crime_Complaint_Prediction/blob/main/docs/Technical_Document.pdf).
