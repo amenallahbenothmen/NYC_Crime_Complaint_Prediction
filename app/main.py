@@ -88,9 +88,9 @@ race_options = [
     'WHITE HISPANIC'
 ]
 
-race = st.selectbox("Select Victim Race", options=race_options, index=0)
+race = st.selectbox("Enter your Race", options=race_options, index=0)
 
-gender = st.selectbox("Select Victim Gender", options=['UNDEFINED', 'F', 'M'], index=0)
+gender = st.selectbox("Enter your Gender", options=['UNDEFINED', 'F', 'M'], index=0)
 
 borough, borough_code = determine_borough(
     st.session_state.clicked_location[0], 
